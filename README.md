@@ -15,9 +15,9 @@ docker pull bushlab/tfagnet:latest
 The shell scripts **run_tfagnet.sh** and **run_tfagnet_custom_tfbs.sh** can be used to score the variants. **run_tfagnet.sh** uses a pre-defined set of TFBS for GM12878 used in the original paper, while the **run_tfagnet_custom_tfbs.sh** needs user-defined TFBS file. This file can be generated using the code provided in https://github.com/bushlab-genomics/TF_GRN.
 
 ```
-. run_tfagnet.sh $1 [variants file in vcf format] $2 [genome reference build(37/38)] $3 [output prefix for the folder containing the results]
+. run_tfagnet.sh $1 [path to the directory containing the input files. The results folder will also be created in this path] $2 [variants file in vcf format] $3 [genome reference build(37/38)] $4 [output prefix for the folder containing the results]
 
-. run_tfagnet_custom_tfbs.sh $1 [variants file in vcf format] $2 [csv file containing cis-regulatory TF binding sites(TFBS) for each gene] $3 [genome reference build(37/38)] $4 [output prefix for the folder containing the results]
+. run_tfagnet_custom_tfbs.sh $1 [path to the directory containing the input files. The results folder will also be created in this path] $2 [variants file in vcf format] $3 [csv file containing cis-regulatory TF binding sites(TFBS) for each gene] $4 [genome reference build(37/38)] $5 [output prefix for the folder containing the results]
 
 ```
 The $output_prefix_results folder contains two results files: 
@@ -27,8 +27,8 @@ The $output_prefix_results folder contains two results files:
 # Example run
 
 ```
-. run_tfagnet.sh toy_variants.vcf 37 toy
+. run_tfagnet.sh $files_path(e.g. /home/nxp225/) toy_variants.vcf 37 toy
 
-. run_tfagnet_custom_tfbs.sh toy_variants.vcf toy_gene_tfbs.csv 37 toy
+. run_tfagnet_custom_tfbs.sh $files_path toy_variants.vcf toy_gene_tfbs.csv 37 toy
 
 ```
