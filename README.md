@@ -3,6 +3,8 @@ This page contains description of the TFAGNet container(https://hub.docker.com/r
 
 # Required installation
 * Docker (https://docs.docker.com/get-docker/)
+* OR
+* Singularity(https://github.com/sylabs/singularity/releases)
 
 # Downloading the container
 You can use the following command to pull the container. Note: This is fairly big container(~40GB), so please clear out some storage space before downloading the container.
